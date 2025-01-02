@@ -25,9 +25,10 @@ This project is an advanced face recognition system designed to streamline atten
     ```bash
     cd attendance-recognition-app
     ```
-3. Install the required dependencies:
+3. Run the shell script to install the necessary dependencies:
     ```bash
-    npm install
+    chmod +x dependencies.sh
+    ./dependencies.sh
     ```
 
 ## Contributing
