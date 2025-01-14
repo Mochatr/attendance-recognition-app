@@ -15,7 +15,8 @@ export const useWebcam = () => {
     setStatus(prev => ({ ...prev, isLoading: true, error: null }));
 
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ 
+      // Only request permissions, don't stop the stream
+      await navigator.mediaDevices.getUserMedia({ 
         video: {
           facingMode: "user",
           width: { ideal: 1280 },
@@ -23,9 +24,7 @@ export const useWebcam = () => {
         }
       });
       
-      // Clean up the stream if component unmounts during permission request
-      const tracks = stream.getTracks();
-      tracks.forEach(track => track.stop());
+      // The actual stream will be handled by react-webcam
       
     } catch (error) {
       setStatus({
