@@ -34,7 +34,7 @@ export function WebcamSection() {
   }, []);
 
   return (
-    <div className="min-h-[400px] bg-zinc-900/50 rounded-xl p-8 relative overflow-hidden border border-gray-800">
+    <div id="webcam-section" className="min-h-[400px] bg-zinc-900/50 rounded-xl p-8 relative overflow-hidden border border-gray-800">
       <div className="max-w-2xl mx-auto text-center">
         {!isWebcamActive && !error && (
           <motion.div
