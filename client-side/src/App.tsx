@@ -70,7 +70,7 @@ export function App() {
       <section className="py-16 bg-zinc-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold gradient-text">Why Choose FaceTrack?</h2>
+            <h2 className="text-3xl font-bold gradient-text">Why Choose Visage?</h2>
             <p className="mt-4 text-lg text-gray-400">
               Our advanced system offers everything you need for modern attendance management
             </p>
@@ -107,7 +107,7 @@ export function App() {
               <div className="max-w-2xl mx-auto text-center px-4">
                 <h2 className="text-3xl font-bold mb-4 gradient-text">Ready to Transform Your Workplace?</h2>
                 <p className="text-lg mb-8 text-gray-300">
-                  Join thousands of organizations already using FaceTrack to modernize their attendance systems.
+                  Join organizations already using Visage to modernize their attendance systems.
                 </p>
                 <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-emerald-600 hover:to-emerald-700 transition-all">
                   Start Free Trial
