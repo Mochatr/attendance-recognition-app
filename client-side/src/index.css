@@ -8,14 +8,25 @@
   }
   
   body {
-    @apply bg-black text-white antialiased;
+    @apply bg-black text-gray-100;
   }
 }
 
 @layer components {
-  .btn-primary {
-    @apply px-6 py-3 bg-emerald-500 text-white rounded-lg 
-           hover:bg-emerald-600 transition-colors
-           focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-black;
+  .gradient-text {
+    @apply bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text text-transparent;
+  }
+  
+  .nav-blur {
+    @apply bg-black/80 backdrop-blur-md border-b border-gray-800;
+  }
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: rgba(16, 185, 129, 0.5);
+  }
+  50% {
+    border-color: rgba(16, 185, 129, 1);
   }
 }

@@ -8,59 +8,54 @@ export function FaceDetectIcon({ className = "w-8 h-8" }) {
         animate={{ opacity: 1 }}
         className="relative"
       >
-        {/* Face detection frame */}
+        {/* Face silhouette */}
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-400 to-emerald-500 rounded-full opacity-90" />
+        
+        {/* Corner brackets */}
         <svg viewBox="0 0 100 100" className="w-full h-full">
-          {/* Gradient background */}
-          <defs>
-            <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#22D3EE" />
-              <stop offset="100%" stopColor="#3B82F6" />
-            </linearGradient>
-          </defs>
-          
-          {/* Face silhouette */}
-          <path
-            d="M50 75C63.8071 75 75 63.8071 75 50C75 36.1929 63.8071 25 50 25C36.1929 25 25 36.1929 25 50C25 63.8071 36.1929 75 50 75Z"
-            fill="url(#iconGradient)"
-            opacity="0.2"
-          />
-          
-          {/* Corner brackets with animation */}
+          {/* Top-left bracket */}
           <motion.path
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
             d="M 20 20 L 20 35 M 20 20 L 35 20"
-            stroke="url(#iconGradient)"
+            stroke="currentColor"
             strokeWidth="4"
             fill="none"
+            className="text-emerald-400"
           />
+          {/* Top-right bracket */}
           <motion.path
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
             d="M 80 20 L 80 35 M 80 20 L 65 20"
-            stroke="url(#iconGradient)"
+            stroke="currentColor"
             strokeWidth="4"
             fill="none"
+            className="text-emerald-400"
           />
+          {/* Bottom-left bracket */}
           <motion.path
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
             d="M 20 80 L 20 65 M 20 80 L 35 80"
-            stroke="url(#iconGradient)"
+            stroke="currentColor"
             strokeWidth="4"
             fill="none"
+            className="text-emerald-400"
           />
+          {/* Bottom-right bracket */}
           <motion.path
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
             d="M 80 80 L 80 65 M 80 80 L 65 80"
-            stroke="url(#iconGradient)"
+            stroke="currentColor"
             strokeWidth="4"
             fill="none"
+            className="text-emerald-400"
           />
         </svg>
       </motion.div>
