@@ -20,7 +20,7 @@ export function Navbar() {
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <FaceDetectIcon />
-            <span className="ml-2 text-xl font-bold gradient-text">FaceTrack</span>
+            <span className="ml-2 text-xl font-bold gradient-text">Visage</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
