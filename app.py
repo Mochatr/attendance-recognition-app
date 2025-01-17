@@ -1,11 +1,11 @@
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, send_from_directory
 import cv2
 import numpy as np
 import face_recognition
 import os
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='client-side/dist', static_url_path='')
 
 # Load known faces and encodings
 path = 'attendance_dataset'
@@ -46,7 +46,7 @@ def generate_frames():
         success, img = cap.read()
         if not success:
             break
-        else:
+        try:
             small_frame = cv2.resize(img, (0, 0), None, 0.25, 0.25)
             small_frame = cv2.cvtColor(small_frame, cv2.COLOR_BGR2RGB)
 
@@ -71,10 +71,13 @@ def generate_frames():
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+        except Exception as e:
+            print(f"Error: {e}")
+            break
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/video_feed')
 def video_feed():

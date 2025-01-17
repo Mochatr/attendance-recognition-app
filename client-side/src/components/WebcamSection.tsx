@@ -1,5 +1,4 @@
 import { useState, useCallback, useRef } from 'react';
-import Webcam from 'react-webcam';
 import { motion } from 'framer-motion';
 import { Camera, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { clsx } from 'clsx';
@@ -8,15 +7,10 @@ export function WebcamSection() {
   const [isWebcamActive, setIsWebcamActive] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  const webcamRef = useRef<Webcam>(null);
 
   const handleStartWebcam = useCallback(() => {
     setError(null);
     setIsWebcamActive(true);
-  }, []);
-
-  const handleUserMedia = useCallback(() => {
-    setError(null);
   }, []);
 
   const handleUserMediaError = useCallback((error: string | DOMException) => {
@@ -25,12 +19,10 @@ export function WebcamSection() {
   }, []);
 
   const simulateAttendanceProcess = useCallback(() => {
-    if (webcamRef.current) {
-      setIsProcessing(true);
-      setTimeout(() => {
-        setIsProcessing(false);
-      }, 2000);
-    }
+    setIsProcessing(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+    }, 2000);
   }, []);
 
   return (
@@ -81,16 +73,10 @@ export function WebcamSection() {
             className="space-y-4"
           >
             <div className="relative">
-              <Webcam
-                ref={webcamRef}
-                onUserMedia={handleUserMedia}
-                onUserMediaError={handleUserMediaError}
+              <img
+                src="/video_feed"
+                alt="Webcam Feed"
                 className="rounded-lg mx-auto border-2 border-gray-800"
-                videoConstraints={{
-                  width: 640,
-                  height: 480,
-                  facingMode: "user"
-                }}
               />
               {isProcessing && (
                 <div className="absolute inset-0 bg-zinc-900/80 backdrop-blur-sm rounded-lg flex items-center justify-center">
